@@ -1,12 +1,8 @@
 from ollama import chat
-from ollama import ChatResponse
 
-response: ChatResponse = chat(model='minimax-m2.7:cloud', messages=[
-  {
-    'role': 'user',
-    'content': 'Why is the sky blue?',
-  },
-])
-print(response['message']['content'])
-# or access fields directly from the response object
+
+response = chat(
+    model='qwen3',
+    messages=[{'role': 'user', 'content': 'Hello!'}],
+)
 print(response.message.content)
